@@ -1,2 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// Date Pickers for semester start and end dates
+$(function() {
+  $('#semester_start_date').datepicker({ showAnim: 'fold' });
+  $('#semester_end_date').datepicker({ showAnim: 'fold' });
+});

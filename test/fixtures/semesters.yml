@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_date: 2010-12-19
+  end_date: 2010-12-19
+  min_percentage: 1
+
+two:
+  start_date: 2010-12-19
+  end_date: 2010-12-19
+  min_percentage: 1

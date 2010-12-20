@@ -1,0 +1,31 @@
+<h1>New semester</h1>
+
+<%= form_for(@semester) do |f| %>
+  <% if @semester.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@semester.errors.count, "error") %> prohibited this semester from being saved:</h2>
+
+      <ul>
+        <% @semester.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'semester duration' %>
+    <%= f.text_field :start_date, :size => 10 %> to
+    <%= f.text_field :end_date, :size => 10 %>
+  </div>
+  <div class="field">
+    <%= f.label 'min. req. attendance' %>
+    <%= f.text_field :min_percentage, :size => 2 %> %
+  </div>
+  <div class="actions">
+    <%= f.submit 'Proceed' %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', semesters_path %>
