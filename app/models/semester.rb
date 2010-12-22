@@ -4,6 +4,9 @@ class Semester < ActiveRecord::Base
   validate :min_percentage_within_limits
   validates_numericality_of :min_percentage
 
+  has_many :courses
+  accepts_nested_attributes_for :courses
+
   private
   def end_date_after_start_date
     errors.add(:end_date, "should be past start date") if start_date && end_date && (start_date >= end_date)

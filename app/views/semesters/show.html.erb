@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Start date:</b>
-  <%= @semester.start_date %>
-</p>
-
-<p>
-  <b>End date:</b>
+  <b>Semester period:</b>
+  <%= @semester.start_date %> to 
   <%= @semester.end_date %>
 </p>
 
@@ -14,3 +10,10 @@
   <b>Min percentage:</b>
   <%= @semester.min_percentage %>
 </p>
+
+<p><b>Courses:</b></p>
+<ul>
+<% @semester.courses.each do |course| %>
+  <li><%= "#{course.title} (#{course.credits} credits)" %> </li>
+<% end %>
+  </ul>

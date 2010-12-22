@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101218212614) do
+ActiveRecord::Schema.define(:version => 20101220214717) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "title"
+    t.integer  "credits"
+    t.integer  "semester_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "semesters", :force => true do |t|
     t.date     "start_date"

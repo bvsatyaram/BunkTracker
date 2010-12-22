@@ -1,0 +1,20 @@
+<h1>Add Courses</h1>
+<% if @semester.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@semester.errors.count, "error") %> prohibited this semester from being saved:</h2>
+
+    <ul>
+      <% @semester.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @semester do |semester_form| %>
+  <%= semester_form.fields_for :courses, @semester.courses do |course_fields| %>
+    Title: <%= course_fields.text_field :title %>
+    Credits: <%= course_fields.text_field :credits %> <br />
+  <% end %>
+  <%= semester_form.submit "Proceed" %>
+<% end %>
